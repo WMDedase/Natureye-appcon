@@ -1,0 +1,128 @@
+*{
+    font-family: 'Sofia Sans';
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3A5736;
+    background-image: url(../images/BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center ; 
+    background-position-y: -16rem;
+
+}
+.container {
+    max-width: 95%;
+}
+
+.login-container {
+    display: flex;
+    /* border: 1px solid #000; */
+}
+.left-container {
+    position: relative;
+    display: flex;
+    flex: 1.3;
+}
+
+.right-container {
+    /* border: 2px solid #000; */
+    flex: 1;
+    margin: 10px;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    margin-left: 15rem;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 13.1rem;
+
+}
+.logo img {
+    height: 19rem;
+    width: 19rem;
+    margin-top: 1.5rem;
+}
+
+.right-container h2 {
+    color:#72C052; 
+    font-weight:900;
+    margin-bottom: 20px;
+    margin-left:10px;
+}
+
+.right-container h5 {
+    color: #ffffffda;
+    font-size: 18px;
+    margin: 15px;
+}
+
+
+.right-container a {
+    text-decoration: none;
+}
+
+.right-container a :hover {
+    text-decoration: underline #72C052;
+}
+
+.signup-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-link a:hover {
+    text-decoration: underline #ffffffda;
+}
+
+.right-container h5 a {
+    color: #72C052;
+    font-size: 18px;
+}
+.form-floating input {
+    background-color: transparent;
+    border: 2px solid #82B285;
+    border-radius: 10px;
+    max-width: 95%;
+    margin-left: 10px;
+}
+
+.form-floating input :active{
+    background-color: transparent;
+}
+
+.form-floating label {
+    background-color: transparent;
+    color: #797979;
+    margin-left: 10px;
+}
+
+.form-check {
+    margin: 10px;
+    color: #ffffffda;
+}
+
+.d-grid{
+    margin: 10px;
+}
+
+.d-grid .btn {
+    background-color: #4C8C41;
+    border: transparent;
+    height: 3rem;
+    border-radius: 10px;
+}
+
+.d-grid .btn:hover {
+    background-color: #396830;
+}
+
