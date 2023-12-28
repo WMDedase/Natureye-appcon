@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthManager;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,11 @@ Route::get('/forgotPassword', function () {
 Route::get('/resetPassword', function () {
     return view('resetPassword');
 });
-// Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
+ 
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+ 
+    return redirect('/home');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');

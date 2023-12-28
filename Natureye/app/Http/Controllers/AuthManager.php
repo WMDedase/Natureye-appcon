@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class AuthManager extends Controller
 {
@@ -14,6 +15,9 @@ class AuthManager extends Controller
     }
 
     function loginPost(Request $request){
+        
+        Auth::logout();
+
         $request->validate([
             'email' => 'required',
             'password' => 'required'
@@ -48,6 +52,12 @@ class AuthManager extends Controller
         if(!$user){
             return redirect(route('signup'))->collator_sort_with_sort_keys("error", "login details are not valid")->withInput();
         }
+        event(new Registered($user));
+
+        $credentials = $request->only('email', 'password');
+
+        Auth::attempt($credentials);
+
         return redirect(route('login'))->with("success", "Account has been created");
     }
 
