@@ -24,4 +24,11 @@ Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('/signup', [AuthManager::class, 'signup'])->name('signup');
 Route::post('/signup', [AuthManager::class, 'signupPost'])->name('signup.post');
 
+Route::get('/forgotPassword', function () {
+    return view('forgotPassword');
+});
+
+Route::get('/resetPassword', function () {
+    return view('resetPassword');
+});
 // Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');

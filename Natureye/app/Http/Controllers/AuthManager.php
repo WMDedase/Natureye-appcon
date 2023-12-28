@@ -25,7 +25,7 @@ class AuthManager extends Controller
         if(Auth::attempt($credentials)){
             return redirect()->intended(route('home'));
         }
-        return redirect(route('login'))->with("error", "Login details are not valid");
+        return redirect(route('login'))->with("error", "The your email or password are incorrect.")->withInput( $request->except('$password'));
         // if login failed
     }
     
@@ -46,7 +46,7 @@ class AuthManager extends Controller
 
         $user = User::create($data);
         if(!$user){
-            return redirect(route('signup'))->collator_sort_with_sort_keys("error", "login details are not valid");
+            return redirect(route('signup'))->collator_sort_with_sort_keys("error", "login details are not valid")->withInput();
         }
         return redirect(route('login'))->with("success", "Account has been created");
     }

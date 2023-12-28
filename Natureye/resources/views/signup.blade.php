@@ -22,21 +22,21 @@
                 <form action="{{route('signup.post')}}" method="POST">
                   @csrf 
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" placeholder="name" name="name" required>
+                    <input type="text" class="form-control" id="name" placeholder="name" name="name"  value="{{old('name')}}" required>
                     <label for="name">Full Name</label>
                   </div>
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" required>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email"  value="{{old('email')}}" required>
                     <label for="email">Email address</label>
                   </div>
 
                   <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password" value="{{old('password')}}" required>
                     <label for="password">Password</label>
                   </div>
                   
                   <div class="form-floating">
-                    <input type="password" class="form-control" id="rpt-password" placeholder="Confirm password" name="password_confirmation" required>
+                    <input type="password" class="form-control" id="rpt-password" placeholder="Confirm password" name="password_confirmation" value="{{old('password_confirmation')}}" required>
                     <label for="repeatPassword">Repeat Password</label>
                   </div>
 

@@ -22,7 +22,7 @@
                 <form action="{{route('login.post')}}" method="POST">
                   @csrf 
                   <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" value="{{old('email')}}">
                     <label for="email">Email address</label>
                   </div>
                   <div class="form-floating">
@@ -30,7 +30,7 @@
                     <label for="password">Password</label>
                   </div>
 
-                  <a href="#"><h5>Forgot Password?</h5></a>
+                  <a href="forgotPassword"><h5>Forgot Password?</h5></a>
 
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="formCheckDefault">
