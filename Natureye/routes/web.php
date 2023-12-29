@@ -17,7 +17,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->middleware('auth')->name('home');
 
 Route::get('/login', [AuthManager::class, 'login'])->name('login');
 Route::post('/login', [AuthManager::class, 'loginPost'])->name('login.post');
@@ -31,7 +31,7 @@ Route::get('/forgotPassword', function () {
 
 Route::get('/resetPassword', function () {
     return view('resetPassword');
-});
+})->middleware('guest')->name('password.request');
  
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();

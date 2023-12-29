@@ -25,9 +25,15 @@ class AuthManager extends Controller
 
         // get email and password only
         $credentials = $request->only('email', 'password');
-
+        
         if(Auth::attempt($credentials)){
-            return redirect()->intended(route('home'));
+            $user = auth()->user();
+
+            if($user->email_verified_at)
+            {
+                return redirect()->intended(route('home'));
+            }
+            return redirect(route('login'))->with("error", "Please verify your email to proceed.")->withInput( $request->except('$password'));
         }
         return redirect(route('login'))->with("error", "The your email or password are incorrect.")->withInput( $request->except('$password'));
         // if login failed
@@ -58,7 +64,7 @@ class AuthManager extends Controller
 
         Auth::attempt($credentials);
 
-        return redirect(route('login'))->with("success", "Account has been created");
+        return redirect(route('login'))->with("success", "Account has been created. Please verify your email to proceed");
     }
 
     function logout(){
