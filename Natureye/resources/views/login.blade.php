@@ -57,6 +57,12 @@
                     </div>
                   @endif
 
+                  @if(session()->has("status"))
+                    <div class="form-check" style="color:red">
+                      {{session("status")}}
+                    </div>
+                  @endif
+
                   <div class="d-grid gap-2">
                     <button class="btn btn-primary" type="submit">Sign In</button>
                   </div>
