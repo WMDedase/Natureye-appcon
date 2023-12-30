@@ -33,6 +33,7 @@ class AuthManager extends Controller
             {
                 return redirect()->intended(route('home'));
             }
+            Auth::logout();
             return redirect(route('login'))->with("error", "Please verify your email to proceed.")->withInput( $request->except('$password'));
         }
         return redirect(route('login'))->with("error", "The your email or password are incorrect.")->withInput( $request->except('$password'));
