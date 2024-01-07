@@ -1,0 +1,60 @@
+*{
+    font-family: 'Sofia Sans';
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/images/ForgotPass\(BG\).png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    max-width: 95%;
+}
+
+.em-container {
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    border-radius: 60px;
+    background-color:rgba(255,255,255,0.9);
+    padding: 30px;
+    gap: 1rem;
+}
+
+
+.verified-icon{
+    display: flex;
+    width: 12rem;
+    margin-bottom: 30px;
+}
+
+.em-container h1 {
+    text-align: center;
+    color: #527661;
+    font-weight: 900;
+}
+
+.em-container h5 {
+    text-align: center;
+    color: #527661;
+    margin-bottom: 1rem;
+}
+.d-grid {
+    display: flex;
+    max-width: 70%;
+}
+.d-grid .btn {
+    background-color: #4C8C41;
+    border: transparent;
+    height: 3rem;
+    border-radius: 10px;
+}
+
+.d-grid .btn:hover {
+    background-color: #396830;
+}
